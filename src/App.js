@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {ButtonMain} from "./components/ButtonMain";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Buttons} from "./components/Buttons";
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+let App = () => {
+    return (
+        <div style={{maxWidth: '10rem', margin: '6rem auto'}}>
+            <h1>Button Task</h1>
+            <Router>
+                <Switch>
+                    < Route exact path='/' component={ButtonMain}/>
+                    <div>
+                        < Route path='/1' component={Buttons}/>
+                    </div>
+                </Switch>
+            </Router>
+        </div>
+    );
 }
 
 export default App;
