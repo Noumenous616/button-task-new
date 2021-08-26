@@ -6,10 +6,11 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 
 let App = () => {
+
     return (
         <div style={{maxWidth: '10rem', margin: '6rem auto'}}>
             <h1>Button Task</h1>
-            <Router>
+            <Router basename={process.env.PUBLIC_URL}>
                 <Switch>
                     < Route exact path='/' component={ButtonMain}/>
                     <div>
